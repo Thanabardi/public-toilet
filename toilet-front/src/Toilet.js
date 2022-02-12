@@ -7,11 +7,14 @@ const Toilet = () => {
   const { roomID } = useParams()
 
   useEffect(() => {
-    RoomStatus(roomID).then((data) => {
+      const interval = setInterval(() => {
+      RoomStatus(1).then((data) => {
       setDetail(Object.entries(data))
-      console.log(data)
+      console.log('time')
+      }, 10000);
+      return () => clearInterval(interval);
     })
-  }, [roomID])
+  }, [roomID]);
 
   async function RoomStatus(id) {
   // var config = {
@@ -23,8 +26,51 @@ const Toilet = () => {
     return res.data
   }
 
+
   return (
-    <div>
+    <div style={{display: "flex", justifyContent: "space-evenly", padding: "30% 0"}}>
+      <table style={{backgroundColor: "red"}}>
+        <tr>
+          <th>{ detail[0] }</th>
+        </tr>
+        <tr>
+          <th>{!detail[1] && <h1>available</h1>}</th>
+        </tr>
+        <tr>
+          <td>{ detail[2] }</td>
+        </tr>
+        <tr>
+          <td>{ detail[4] }</td>
+        </tr>
+      </table>
+      <table style={{backgroundColor: "red"}}>
+        <tr>
+          <th>{ detail[0] }</th>
+        </tr>
+        <tr>
+          <th>{!detail[1] && <h1>available</h1>}</th>
+        </tr>
+        <tr>
+          <td>{ detail[2] }</td>
+        </tr>
+        <tr>
+          <td>{ detail[4] }</td>
+        </tr>
+      </table>
+      <table style={{backgroundColor: "red"}}>
+        <tr>
+          <th>{ detail[0] }</th>
+        </tr>
+        <tr>
+          <th>{!detail[1] && <h1>available</h1>}</th>
+        </tr>
+        <tr>
+          <td>{ detail[2] }</td>
+        </tr>
+        <tr>
+          <td>{ detail[4] }</td>
+        </tr>
+      </table>
       { detail }
     </div>
   )
