@@ -18,7 +18,7 @@ const Toilet = () => {
     RoomStatus(3).then((data) => {
     setRoom3(Object.entries(data))
     })
-    }, 10000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -32,7 +32,7 @@ const Toilet = () => {
 
   return (
     <div style={{display: "flex", justifyContent: "space-evenly", padding: "30% 0"}}>
-      <table style={{backgroundColor: "red"}}>
+      <table style={{backgroundColor: "CadetBlue", border:"2px solid", padding: "0.80rem 1.00rem"}} className="tb1">
         <tr>
           <th>{ room1?.[0] }</th>
         </tr>
@@ -46,7 +46,7 @@ const Toilet = () => {
           <td>{ room1?.[4] }</td>
         </tr>
       </table>
-      <table style={{backgroundColor: "red"}}>
+      <table style={{backgroundColor: "CadetBlue",border:"2px solid", padding: "0.80rem 1.00rem"}} className="tb2">
         <tr>
           <th>{ room2?.[0] }</th>
         </tr>
@@ -60,7 +60,7 @@ const Toilet = () => {
           <td>{ room2?.[4] }</td>
         </tr>
       </table>
-      <table style={{backgroundColor: "red"}}>
+      <table style={{backgroundColor: "CadetBlue",border:"2px solid", padding: "0.80rem 1.00rem"}} className="tb3">
         <tr>
           <th>{ room3?.[0] }</th>
         </tr>
