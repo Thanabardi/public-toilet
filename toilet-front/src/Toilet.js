@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
 
 const Toilet = () => {
   const [room1, setRoom1] = useState()
@@ -33,51 +32,48 @@ const Toilet = () => {
 
   return (
     <div style={{display: "flex", justifyContent: "space-evenly", padding: "30% 0"}}>
-      {/* <table style={{backgroundColor: "red"}}>
+      <table style={{backgroundColor: "red"}}>
         <tr>
-          <th>{ detail[0] }</th>
+          <th>{ room1[0] }</th>
         </tr>
         <tr>
-          <th>{!detail[1] && <h1>available</h1>}</th>
+          <th>{room1[1] && <h1>available</h1>}</th>
         </tr>
         <tr>
-          <td>{ detail[2] }</td>
+          <td>{ room1[2] }</td>
         </tr>
         <tr>
-          <td>{ detail[4] }</td>
+          <td>{ room1[4] }</td>
         </tr>
       </table>
       <table style={{backgroundColor: "red"}}>
         <tr>
-          <th>{ detail[0] }</th>
+          <th>{ room2[0] }</th>
         </tr>
         <tr>
-          <th>{!detail[1] && <h1>available</h1>}</th>
+          <th>{room2[1] && <h1>available</h1>}</th>
         </tr>
         <tr>
-          <td>{ detail[2] }</td>
+          <td>{ room2[2] }</td>
         </tr>
         <tr>
-          <td>{ detail[4] }</td>
+          <td>{ room2[4] }</td>
         </tr>
       </table>
       <table style={{backgroundColor: "red"}}>
         <tr>
-          <th>{ detail[0] }</th>
+          <th>{ room3[0] }</th>
         </tr>
         <tr>
-          <th>{!detail[1] && <h1>available</h1>}</th>
+          <th>{room3[1] && <h1>available</h1>}</th>
         </tr>
         <tr>
-          <td>{ detail[2] }</td>
+          <td>{ room3[2] }</td>
         </tr>
         <tr>
-          <td>{ detail[4] }</td>
+          <td>{ room3[4] }</td>
         </tr>
-      </table> */}
-      { room1 }
-      { room2 }
-      { room3 }
+      </table>
     </div>
   )
 }
