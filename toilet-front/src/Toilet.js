@@ -34,44 +34,44 @@ const Toilet = () => {
     <div style={{display: "flex", justifyContent: "space-evenly", padding: "30% 0"}}>
       <table style={{backgroundColor: "red"}}>
         <tr>
-          <th>{ room1[0] }</th>
+          <th>{ room1?.[0] }</th>
         </tr>
         <tr>
-          <th>{room1[1] && <h1>available</h1>}</th>
+          <th>{room1?.[1] && <h1>available</h1>}</th>
         </tr>
         <tr>
-          <td>{ room1[2] }</td>
+          <td>{ room1?.[2] }</td>
         </tr>
         <tr>
-          <td>{ room1[4] }</td>
-        </tr>
-      </table>
-      <table style={{backgroundColor: "red"}}>
-        <tr>
-          <th>{ room2[0] }</th>
-        </tr>
-        <tr>
-          <th>{room2[1] && <h1>available</h1>}</th>
-        </tr>
-        <tr>
-          <td>{ room2[2] }</td>
-        </tr>
-        <tr>
-          <td>{ room2[4] }</td>
+          <td>{ room1?.[4] }</td>
         </tr>
       </table>
       <table style={{backgroundColor: "red"}}>
         <tr>
-          <th>{ room3[0] }</th>
+          <th>{ room2?.[0] }</th>
         </tr>
         <tr>
-          <th>{room3[1] && <h1>available</h1>}</th>
+          <th>{room2?.[1] && <h1>available</h1>}</th>
         </tr>
         <tr>
-          <td>{ room3[2] }</td>
+          <td>{ room2?.[2] }</td>
         </tr>
         <tr>
-          <td>{ room3[4] }</td>
+          <td>{ room2?.[4] }</td>
+        </tr>
+      </table>
+      <table style={{backgroundColor: "red"}}>
+        <tr>
+          <th>{ room3?.[0] }</th>
+        </tr>
+        <tr>
+          <th>{room3?.[1] && <h1>available</h1>}</th>
+        </tr>
+        <tr>
+          <td>{ room3?.[2] }</td>
+        </tr>
+        <tr>
+          <td>{ room3?.[4] }</td>
         </tr>
       </table>
     </div>
