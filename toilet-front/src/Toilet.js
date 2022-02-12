@@ -3,25 +3,29 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const Toilet = () => {
-  const [detail, setDetail] = useState()
-  const { roomID } = useParams()
+  const [room1, setRoom1] = useState()
+  const [room2, setRoom2] = useState()
+  const [room3, setRoom3] = useState()
+  // const { roomID } = useParams()
 
   useEffect(() => {
-      const interval = setInterval(() => {
-      RoomStatus(1).then((data) => {
-      setDetail(Object.entries(data))
-      console.log('time')
-      }, 10000);
-      return () => clearInterval(interval);
+    const interval = setInterval(() => {
+    RoomStatus(1).then((data) => {
+    setRoom1(Object.entries(data))
     })
-  }, [roomID]);
+    RoomStatus(2).then((data) => {
+    setRoom2(Object.entries(data))
+    })
+    RoomStatus(3).then((data) => {
+    setRoom3(Object.entries(data))
+    })
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
 
   async function RoomStatus(id) {
-  // var config = {
-  //   headers: {'Access-Control-Allow-Origin': '*'}
-  // };
   const res = await axios.get(
-    `https://ecourse.cpe.ku.ac.th/exceed03/api/room-status/1`
+    `https://ecourse.cpe.ku.ac.th/exceed03/api/room-status/${id}`
     )
     return res.data
   }
@@ -29,7 +33,7 @@ const Toilet = () => {
 
   return (
     <div style={{display: "flex", justifyContent: "space-evenly", padding: "30% 0"}}>
-      <table style={{backgroundColor: "red"}}>
+      {/* <table style={{backgroundColor: "red"}}>
         <tr>
           <th>{ detail[0] }</th>
         </tr>
@@ -70,8 +74,10 @@ const Toilet = () => {
         <tr>
           <td>{ detail[4] }</td>
         </tr>
-      </table>
-      { detail }
+      </table> */}
+      { room1 }
+      { room2 }
+      { room3 }
     </div>
   )
 }
